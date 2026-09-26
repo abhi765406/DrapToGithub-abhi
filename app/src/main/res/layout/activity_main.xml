@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zip to GitHub"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick a .zip file, it uploads straight into a GitHub repo."
+            android:textSize="13sp"
+            android:layout_marginBottom="20dp"/>
+
+        <EditText
+            android:id="@+id/tokenInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="GitHub Personal Access Token"
+            android:inputType="textPassword"
+            android:maxLines="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:text="Saved only on this device. Use a token scoped just to what you need."
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/ownerInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="GitHub username"
+            android:maxLines="1"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/repoInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Repository name"
+            android:maxLines="1"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/messageInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Commit message"
+            android:text="Upload via Zip to GitHub app"
+            android:maxLines="1"
+            android:layout_marginBottom="12dp"/>
+
+        <CheckBox
+            android:id="@+id/createRepoCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create the repository if it doesn't exist"
+            android:checked="true"/>
+
+        <RadioGroup
+            android:id="@+id/visibilityGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <RadioButton
+                android:id="@+id/privateRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Private"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/publicRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Public"
+                android:layout_marginStart="24dp"/>
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/stripTopFolderCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remove the outer folder from the zip"
+            android:checked="true"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/chooseZipButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose ZIP file"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:id="@+id/selectedFileText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No file selected"
+            android:textSize="13sp"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/uploadButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload to GitHub"
+            android:layout_marginBottom="12dp"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="0"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log:"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/logText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="150dp"
+            android:background="#EEEEEE"
+            android:padding="8dp"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:text=""/>
+
+        <Button
+            android:id="@+id/openRepoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open Repository"
+            android:visibility="gone"
+            android:layout_marginTop="12dp"/>
+
+    </LinearLayout>
+</ScrollView>
